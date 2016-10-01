@@ -23,6 +23,10 @@ type App struct {
 	handlerMap map[string]*MethodHandler
 }
 
+func (a *App) initialize() {
+	a.handlerMap = make(map[string]*MethodHandler)
+}
+
 func (a *App) registerHandler(method string, route string, handler Handler) {
 	methodHandler := a.handlerMap[route]
 	if methodHandler == nil {
@@ -55,7 +59,11 @@ func (a *App) configureHandlers() {
 
 // ExpressGo - Creates a new app instance
 func ExpressGo() *App {
-	return &App{}
+	app := &App{}
+
+	app.initialize()
+
+	return app
 }
 
 // Get - Registers a GET handler for a route
