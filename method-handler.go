@@ -11,7 +11,7 @@ type MethodHandler struct {
 	Put       Handler
 	Post      Handler
 	Delete    Handler
-	Option    Handler
+	Options   Handler
 	Head      Handler
 	methodMap map[string]*Handler
 }
@@ -27,12 +27,12 @@ func NewMethodHandler() *MethodHandler {
 
 func (mh *MethodHandler) configure() {
 	mh.methodMap = map[string]*Handler{
-		"GET":    &mh.Get,
-		"PUT":    &mh.Put,
-		"POST":   &mh.Post,
-		"DELETE": &mh.Delete,
-		"OPTION": &mh.Option,
-		"HEAD":   &mh.Head,
+		"GET":     &mh.Get,
+		"PUT":     &mh.Put,
+		"POST":    &mh.Post,
+		"DELETE":  &mh.Delete,
+		"OPTIONS": &mh.Options,
+		"HEAD":    &mh.Head,
 	}
 }
 
