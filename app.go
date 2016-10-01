@@ -1,6 +1,8 @@
 package expressgo
 
 import (
+	"fmt"
+	"log"
 	"net/http"
 )
 
@@ -78,5 +80,8 @@ func (a *App) Delete(route string, handler Handler) {
 
 // Start - Configures handlers for routes and starts the server
 func (a *App) Start(host string, port int) {
+	a.configureHandlers()
 
+	addr := fmt.Sprintf("%v:%v", host, port)
+	log.Fatal(http.ListenAndServe(addr, nil))
 }
