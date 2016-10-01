@@ -1,9 +1,6 @@
 package expressgo
 
-import (
-	"log"
-	"net/http"
-)
+import "net/http"
 
 // Handler - Alias of the handler func
 type Handler func(w http.ResponseWriter, r *http.Request)
@@ -42,10 +39,6 @@ func (mh *MethodHandler) configure() {
 // SetMethod - Sets the handler for a method
 func (mh *MethodHandler) SetMethod(method string, h Handler) {
 	handler := mh.methodMap[method]
-	if handler != nil {
-		log.Fatalf("Method %v has already been set", method)
-	}
-
 	*handler = h
 }
 
