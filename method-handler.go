@@ -27,12 +27,12 @@ func NewMethodHandler() *MethodHandler {
 
 func (mh *MethodHandler) configure() {
 	mh.methodMap = map[string]*Handler{
-		"GET":     &mh.Get,
-		"PUT":     &mh.Put,
-		"POST":    &mh.Post,
-		"DELETE":  &mh.Delete,
-		"OPTIONS": &mh.Options,
-		"HEAD":    &mh.Head,
+		Get:     &mh.Get,
+		Put:     &mh.Put,
+		Post:    &mh.Post,
+		Delete:  &mh.Delete,
+		Options: &mh.Options,
+		Head:    &mh.Head,
 	}
 }
 

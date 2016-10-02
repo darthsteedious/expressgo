@@ -6,18 +6,6 @@ import (
 	"net/http"
 )
 
-// Get - Constant GET
-const Get = "GET"
-
-// Put - Constant PUT
-const Put = "PUT"
-
-// Post - Constant POST
-const Post = "POST"
-
-// Delete - Constant DELETE
-const Delete = "DELETE"
-
 // App - Struct to manage routing handlers
 type App struct {
 	handlerMap map[string]*MethodHandler
